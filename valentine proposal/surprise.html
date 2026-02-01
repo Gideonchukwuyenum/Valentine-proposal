@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Surprise for Keisha</title>
+<style>
+    body {
+        background: linear-gradient(to bottom right, #ffe6f0, #ffccdd);
+        text-align: center;
+        font-family: 'Comic Sans MS', cursive;
+        overflow: hidden;
+        animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h2 {
+        font-size: 36px;
+        color: #d1005d;
+        margin-top: 40px;
+        text-shadow: 2px 2px white;
+    }
+
+    #teddy {
+        width: 200px;
+        margin-top: 20px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    .btn {
+        padding: 15px 30px;
+        font-size: 22px;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        background-color: #ff4081;
+        color: white;
+        margin-top: 30px;
+        box-shadow: 0 0 15px #ff80ab;
+    }
+
+    #photo {
+        display: none;
+        margin-top: 30px;
+        width: 300px;
+        border-radius: 20px;
+        box-shadow: 0 0 20px #ff69b4;
+        animation: fadeInPhoto 2s ease-in;
+    }
+
+    @keyframes fadeInPhoto {
+        from { opacity: 0; transform: scale(0.8); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    .heart

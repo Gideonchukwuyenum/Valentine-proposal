@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Hii Baby Keisha Will You Be My Valentine?</title>
+<style>
+    body {
+        background: linear-gradient(to bottom right, #ffb6c1, #ffcce6);
+        text-align: center;
+        font-family: 'Comic Sans MS', cursive;
+        overflow: hidden;
+        animation: fadeIn 2s ease-in;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    h1 {
+        font-size: 42px;
+        color: #ff004c;
+        margin-top: 40px;
+        text-shadow: 3px 3px white;
+        animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+        from { text-shadow: 0 0 10px white; }
+        to { text-shadow: 0 0 25px #ff69b4; }
+    }
+
+    .btn {
+        padding: 15px 35px;
+        font-size: 24px;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        margin: 20px;
+        transition: transform 0.2s;
+    }
+
+    .btn:hover {
+        transform: scale(1.1);
+    }
+
+    #yesBtn {
+        background-color: #ff004c;
+        color: white;
+        box-shadow: 0 0 15px #ff80ab;
+        animation: softPulse 2s infinite;
+    }
+
+    @keyframes softPulse {
+        0% { box-shadow: 0 0 10px #ff80ab; }
+        50% { box-shadow: 0 0 25px #ff4081; }
+        100% { box-shadow: 0 0 10px #ff80ab; }
+    }
+
+    #noBtn {
+        background-color: white;
+        color: red;
+        position: absolute;
+        animation: blink 0.5s infinite;
+    }
+
+    @keyframes blink {
+        50% { opacity: 0; }
+    }
+
+    .heart, .sparkle {
+        position: absolute;
+        animation: floatUp 6s infinite linear;
+    }
+
+    .heart {
+        color: red;
+        font-size: 30px;
+    }
+
+    .sparkle {
+        width: 15px;
+        height: 15px;
+        background: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: twinkle 1.5s infinite ease-in-out;
+    }
+
+    @keyframes floatUp {
+        0% { transform: translateY(100vh); opacity: 1; }
+        100% { transform: translateY(-120vh); opacity: 0; }
+    }
+
+    @keyframes twinkle {
+        0%, 100% { opacity: 0.2; transform: scale(0.8); }
+        50% { opacity: 1; transform: scale(1.3); }
+    }
+
+    #teddy {
+        width: 180px;
+        margin-top: 20px;
+        animation: bounce 2s infinite;
+    }
+
+    @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+    }
+
+    #popup {
+        display: none;
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(255, 0, 100, 0.85);
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        text-shadow: 3px 3px black;
+        animation: pop 1s ease-out;
+    }
+
+    @keyframes pop {
+        from { transform: scale(0); opacity: 0; }
+        to { transform: scale(1); opacity: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>Hii Baby Keisha Will You Be My Valentine?</h1>
+
+<img id="teddy" src="https://media.tenor.com/2roX3uxz_68AAAAC/teddy-bear.gif">
+
+<br><br>
+
+<button id="yesBtn" class="btn">YES ❤️</button>
+<button id="noBtn" class="btn">NO 💔</button>
+
+<div id="popup">YAYYYYY YOU MADE ME THE HAPPIEST MAN ALIVE!!! ❤️🎉</div>
+
+<script>
+    const noBtn = document.getElementById("noBtn");
+    function moveNo() {
+        const x = Math.random() * (window.innerWidth - 100);
+        const y = Math.random() * (window.innerHeight - 100);
+        noBtn.style.left = x + "px";
+        noBtn.style.top = y + "px";
+    }
+    setInterval(moveNo, 700);
+
+    document.getElementById("yesBtn").onclick = function() {
+        document.getElementById("popup").style.display = "flex";
+        setTimeout(() => {
+            window.location.href = "surprise.html";
+        }, 3000);
+    };
+
+    for (let i = 0; i < 20; i++) {
+        let heart = document.createElement("div");
+        heart.innerHTML = "❤️";
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+        heart.style.fontSize = (20 + Math.random() * 20) + "px";
+        document.body.appendChild(heart);
+    }
+
+    for (let i = 0; i < 25; i++) {
+        let sparkle = document.createElement("div");
+        sparkle.className = "sparkle";
+        sparkle.style.left = Math.random() * 100 + "vw";
+        sparkle.style.top = Math.random() * 100 + "vh";
+        sparkle.style.animationDuration = (1 + Math.random() * 2) + "s";
+        document.body.appendChild(sparkle);
+    }
+</script>
+
+</body>
+</html>
+
